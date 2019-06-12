@@ -1,0 +1,12 @@
+name: book_test
+title: book_test
+username:
+account: canadice
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 976644
+bundleId: 2146291
+url: https://canadice.shinyapps.io/book_test/
+when: 1560280098.63777
+asMultiple: FALSE
+asStatic: FALSE

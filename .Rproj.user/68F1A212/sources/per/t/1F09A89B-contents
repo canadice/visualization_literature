@@ -1,0 +1,306 @@
+---
+title: "Visualisering"
+author: "Isak Hietala"
+date: ""
+output: 
+  bookdown::html_document2: 
+    fig_caption: yes
+    number_sections: yes
+    toc: yes
+lang: sv
+
+runtime: shiny
+
+bibliography: visualization.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.height = 2, fig.align = "center", fig.width = 6)
+
+require(ggplot2)
+require(grid)
+require(gridExtra)
+
+source("hietala_theme.R")
+
+```
+
+
+# Introduktion
+
+## Varför är visualisering viktigt?
+*"En bild säger mer än tusen ord"* är ett vanligt förekommande ordspråk som innehåller mycket sanning. Speciellt när det kommer till information används visualiseringar i olika former för att på ett effektivt och tydligt sätt förmedla stora mängder data som hade varit svårare att uppfatta som enskilda siffror.
+
+Visualisering ger en statistiker möjlighet att lära känna sitt datamaterial innan mer djupgående analys påbörjas. Med mycket data är det oftast svårt få grepp om sina variabler och observationer. Frågor som; "vad är sambandet mellan mina variabler?" eller "finns det några felaktigheter i materialet?" blir mycket enklare att besvara med hjälp av visualiseringar.
+
+Om du ska presentera något banbrytande för dina kollegor eller chefer måste du på något sätt kunna sammanfatta resultatet på ett lättförståeligt och tydligt sätt. Visualiseringar är ett verktyg som möjliggör många möjligheter...
+
+# Introduktion till programvaror
+I resten av denna text kommer exempel visas i tre olika programvaror. Här följer en kortare presentation av dessa.
+
+## R och RStudio
+
+## SAS Enterprise Guide
+SAS Enterprise Guide (förkortat SAS EG) är det grafiska gränssnitt som öppnar upp användandet av majoriteten av kraftfulla funktioner som programvaran SAS erbjuder för lättare användning. (@SAS2019) Användaren behöver inte kunna programmera utan kan förlita sig på det point-and-click system som finns till hands med översiktliga flödescheman för arbetsprocesser och möjligheten att skapa automatiserade rapporter. (@SASEG2019)
+
+## SPSS
+
+# Visualisering
+
+## Grundläggande begrepp
+Ett diagram innehåller olika delar som kommer refereras i resterande text. Här följer en kortare ordlista:
+
+- **Diagramyta**: Det område som innehåller all information tillhörande en visualisering
+- **Rityta**: Det område som innehåller det faktiska data som visualiseras
+- **Axel**: Kanterna som begränsar ritytan, ofta benämnt som x- och y-axel för den vågräta ( - ) respektive lodräta ( | ) axeln
+- **Axelförklaring**: En rubrik som beskriver vad den angivna axeln visar för information
+- **Skalvärden**: Steg som anger specifika värden på den angivna axeln
+- **Stödlinjer**: Linjer vilka agerar som en förlängning av axlarnas skalvärden i bakgrunden av ritytan
+- **Titel/rubrik**: En rubrik för diagrammet
+- **Källhänvisning**: En text placerade i någon av de nedre hörnen som anger en källa för det visualiserade datamaterialet om sådan finns
+
+## Ett bra diagram
+För att skapa ett bra diagram behöver man tänka på några olika saker.
+
+Vilken typ av variabel som ska visualiseras påverkar huruvida ett diagram är tydligt eller inte. Samma sorts diagram kan mycket enkelt och tydligt visualisera en kvalitativ variabel men visualiserar kvantitativa variabler värdelöst...
+
+```{r echo = FALSE, fig.cap = "Exempel på stapeldiagram för en kvalitativ (t.vä.) och kvantitativ (t.hö.) variabel", fig.width = 8}
+
+data(iris)
+
+p1 <- ggplot(iris) + aes(x = Species) + geom_bar(width = 0.6) +
+  labs(y = "Antal", x = "Art")
+
+p2 <- ggplot(iris) + aes(x = Petal.Length) + geom_bar() +
+  labs(y = "Antal", x = "Bladlängd")
+
+grid.arrange(p1, p2, nrow = 1)
+
+```
+
+Ritytan innehåller den information som ska förmedlas och bör därför få ta upp majoriteten av platsen i ett diagram. Om man anger för stora rubriker blir det lätt att man inkräktar på ritytan. Detsamma gäller om y-axeln innehåller långa skalvärdesnamn.
+
+```{r echo = FALSE, fig.cap = "Exempel på diagram med majoriteten rityta (t.vä.) och för liten rityta (t.hö.)", fig.width = 8}
+
+p1 <- ggplot(iris) + aes(x = Species) + geom_bar(width = 0.6) +
+    labs(y = "Antal", x = "Art")
+
+p2 <- ggplot(iris) + aes(x = Species) + geom_bar(width = 0.6) +
+  labs(y = "Antalet blommor av olika arter", x = "Art")
+
+grid.arrange(p1, p2, nrow = 1)
+
+```
+
+Stödlinjer bör finnas för att underlätta utläsningen av information långt från respektive axel. Dessa bör dock inte ta över diagrammet utan enbart finnas i bakgrunden. Notera att stödlinjer kan komma att justera beroende på vilket sammanhang diagrammen används till. Beroende på upplösning, ljusstyrka eller andra skärmegenskaper kan ibland ljusa och smala linjer försvinna in i den vita bakgrunden. Då är tjockare och starkare stödlinjer befogat.
+
+```{r echo = FALSE, fig.cap = "Exempel på stödlinjer som ligger i bakgrunden (t.vä.) och stödlinjer som stjäl fokus från informationen (t.hö.)", fig.width = 8}
+
+p1 <- ggplot(iris) + aes(x = Species) + geom_bar(width = 0.6) +
+    labs(y = "Antal", x = "Art")
+
+p2 <- p1 + theme(panel.grid.major.y = element_line(color = "black"),
+                 panel.grid.minor.y = element_line(color = "black"))
+
+grid.arrange(p1, p2, nrow = 1)
+
+```
+
+Ett bra diagram har också läsbar text oavsett storleken på diagrammet. En bra referens kan vara att förhålla den minsta texten i diagrammet till ungefär samma storlek som brödtexten i rapporten eller presentationen. Försök att alltid tänka på att underlätta för läsaren!
+
+```{r echo = FALSE, fig.cap = "Exempel på läsbar text (t.vä.) och på gränsen till för liten text (t.hö.)", fig.width = 8}
+
+p1 <- ggplot(iris) + aes(x = Species) + geom_bar(width = 0.6) +
+    labs(y = "Antal", x = "Art") 
+
+p2 <- p1 + theme(axis.text = element_text(size = 8, color = "black"),
+                 axis.title.y = element_text(angle = 0, vjust = 0.5, size = 9),
+                 axis.title.x = element_text(size = 9))
+
+grid.arrange(p1, p2, nrow = 1)
+
+```
+
+Källhänvisning bör finnas i alla diagram där informationen är hämtat från någon annan källa än oss själva. 
+
+```{r echo = FALSE, fig.cap = "Exempeldiagram med källhänvisning", fig.width = 4}
+
+ggplot(iris) + aes(x = Species) + geom_bar(width = 0.6) +
+  labs(y = "Antal", x = "Art", caption = "Källa: Fisher, R. A. (1936)")
+
+```
+
+
+## Visualisering av beskrivande statistik
+
+### Stapeldiagram
+Den absolut enklaste formen av visualisering är stapeldiagram. Denna diagramtyp består utav staplar vars höjd kommer från ett värde i datamaterialet, vanligtvis då man har en kvalitativ variabel och dess frekvenser (antalet av de olika arterna i diagrammen från tidigare kapitel), men diagramtypen kan också användas då man har en kvantitativ variabel uppdelad på en eller flera kvalitativa variabler (medellönen uppdelat på olika sektorer). Följande exempel kommer utgå från det första fallet.
+
+Olika programvaror kräver olika mycket bearbetning av datamaterialet innan diagrammet kan skapas. Vissa kräver att du själv skapar en frekvenstabell och anger att höjden av respektive stapel ska bestämmas av den tillhörande frekvensen, medan andra kan göra dessa beräkningar direkt på rådata.
+
+#### R {-}
+Som tidigare nämnt om R använder sig programmet av diverse paket som innehåller redan skapade funktioner för att lösa diverse arbetsuppgifter. För visualisering kommer vi använda oss främst av paketet `ggplot2` som bygger på vad som kallas för *grammar of graphics*. (@ggplot2019) Detta är ett försök till att formalisera ett språk för hur man enhetligt bör "skriva" visualiseringar och även SPSS använder sig av grunderna till detta språk. Det första steget för att få ta del av funktionerna är att ladda paketet till din R-session genom:
+
+```{r}
+require(ggplot2)
+```
+
+Paketets visualiseringar utgår ifrån en `data.frame` vilket innebär att vi behöver ladda in ett datamaterial innan vi kan påbörja visualiseringarna. Detta kan göras med någon utav funktionerna `read.csv()`, `read.csv2()` osv. **Se till att datamaterialet som laddats in ser ut som vi förväntar att det ska göra**, exempelvis är decimaler korrekt angivna, har vi lika många variabler i R som i Excel och liknande. Med koden nedan kan datamaterialet som används som exempel genom hela denna text laddas in i R till objektet som kallas `exempeldata`. Vi kan även se hur materialet ser ut genom att använda `head()` som skriver ut ett antal observationer. Materialet ser ut att innehålla fem variabler, varav två är kvalitativa.
+
+```{r}
+
+exempeldata <- read.csv2(file = "732G45_exempeldata.csv")
+
+head(exempeldata, n = 5)
+
+```
+
+
+##### Grundkomponenter {-}
+Vi kan nu börja med att skapa stapeldiagrammet. Vi börjar med de tre grundkomponenterna av ett `ggplot`-diagram; `ggplot()`, `aes()` och `geom()`. Alla diagram måste innehålla dessa tre komponenter i någon form för att vi ska kunna producera något överhuvudtaget, sen kan vi lägga till andra instruktioner för att ändra diagrammet utseende.
+
+```{r echo = FALSE}
+theme_set(theme_gray())
+```
+
+
+I `ggplot()` anges vilket datamaterial vi vill använda för visualiseringen:
+
+```{r}
+
+ggplot(exempeldata)
+
+```
+
+Som vi ser skapas inget utifrån detta kommando, vi har bara sagt åt R att använda datamaterialet men inte vad den ska göra med det. Nästa steg är att ange vilka variabler vi vill använda för axlarna i diagrammet. När det kommer till stapeldiagram finns två olika sätt att göra; antingen har vi rådata och låter R räkna ut frekvensen av de olika kategorierna själv eller så skapar vi en egen frekvenstabell och anger `y = frekvens`. Vi kommer först börja med exemplet utifrån rådata:
+
+```{r}
+
+ggplot(exempeldata) + aes(x = bil)
+
+```
+
+Nu ser vi att R ritat ut de olika bilarna som finns i materialet på x-axeln, men vi har fortfarande inte sagt åt R vad vi vill att den ska göra med informationen vi ska visualisera. Den sista grundkomponenten är den som styr vilken diagramtyp vi skapar och i `ggplot2` finns många olika som vi kommer stöta på i denna text. För ett stapeldiagram anger vi `geom_bar()` från engelska termen *bar chart*. 
+
+```{r}
+
+ggplot(exempeldata) + aes(x = bil) + geom_bar()
+
+```
+
+För att y-axeln ska visa relativa frekvenser istället för absoluta, kan vi i `geom_bar()` lägga till koden `aes(y = stat(count/sum(count)))`. Diagrammet ändrar sig inte i sin form, staplarna är fortfarande lika höga i relation till varandra, men tolkningar av detta diagram kan nu göras i andelar (procent) istället för antal.
+
+```{r}
+
+ggplot(exempeldata) + aes(x = bil) + geom_bar(aes(y = stat(count/sum(count))))
+
+```
+
+Med dessa grundkomponenter får vi fram ett diagram, men vi kan väl alla hålla med om att det i detta läge inte ser särskilt snyggt och tydligt ut. Ett snabbt och enkelt sätt att få till lite snyggare diagram är att använda någon utav `ggplot`s teman som finns tillgängliga genom olika `theme()`. Exempelvis är ett stilrent tema att utgå ifrån `theme_bw()` likt:
+
+```{r}
+
+ggplot(exempeldata) + aes(x = bil) + geom_bar(aes(y = stat(count/sum(count)))) + theme_bw()
+
+```
+
+Det är nu den största funktionaliteten med `ggplot2` kommer in. Vi kan spara instruktionerna vi gett åt R för att skapa diagrammet och senare lägga till fler instruktioner med andra funktioner genom att använda `+` på samma sätt som koderna ovan är skrivna. Vi sparar därför de nuvarande instruktionerna i ett objekt som vi kallar för `p` likt:
+
+```{r}
+
+p <- ggplot(exempeldata) + aes(x = bil) + geom_bar(aes(y = stat(count/sum(count)))) + theme_bw()
+
+```
+
+Nu ligger alla instruktioner för **hur** R ska rita upp diagrammet sparat i `p` men för att R också ska producera diagrammet måste vi också säga det likt:
+
+```{r}
+
+p
+
+```
+
+Vi kan nu lägga till ytterligare funktioner exempelvis:
+
+```{r}
+
+p + coord_flip()
+
+```
+
+eller:
+
+```{r}
+
+p + scale_y_continuous(labels = scales::percent)
+
+```
+
+Notera att diagrammet inte roterades i det andra diagrammet när vi ändrade hur skalvärdena på y-axeln ser ut. Detta är för att vi endast sagt åt R att rita diagrammet med vardera tillagda instruktion vid två olika tillfällen utan att ha sparat de någonstans. För att R ska spara dessa instruktioner tillsammans med grundkomponenterna vi angivit innan måste vi spara ovanstående kod till ett objekt:
+
+```{r}
+
+p <- p + scale_y_continuous(labels = scales::percent)
+
+p
+
+```
+
+##### Färger {-}
+Om vi vill ändra färgen på olika delar av diagrammet exempelvis staplarna kan vi göra detta inuti `geom_bar()` med argumenten `color` för kantlinjerna och `fill` för fyllnadsfärgen. För att se vilka färger som går att ange kan man köra funktionen `colors()` för deras namn eller hämta hem följande [PDF](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf) som har färgerna utskrivna. Vi kommer senare titta närmare på färger och dess funktion i visualiseringar.
+
+```{r}
+
+p <- ggplot(exempeldata) + aes(x = bil) + 
+  geom_bar(fill = "dark orange",
+           color = "black",
+           aes(y = stat(count/sum(count)))) +
+  theme_bw()
+
+p
+
+```
+
+
+##### Stödlinjer {-}
+Nu vill vi ändra lite stödlinjer så att de syns och hjälper till att förtydliga informationen vi vill visa. När det kommer till stapeldiagram behövs inte stödlinjer på x-axeln då staplarna sträcker sig hela vägen ner till dess skalvärden. Däremot behöver vi förtydliga skalvärdena på y-axeln. För att ändra utseendet på olika delar i ett diagram används `theme()` och diverse olika argument däri. Titta i dokumentationen för funktionen för att få en inblick i vad som kan ändras i diagrammet. Oftast ska dessa delar anges med en utav `element`-funktioner, beroende på typen som ska ändras. Text ändras med `element_text()`, linjer med `element_line()` och delar kan helt och hållet tas bort genom `element_blank()`. Nedanstående kod ändrar stödlinjerna på y-axelns färg till lite mörkare grå än standardvärdet (`panel.grid.major` för stödlinjerna som följer skalvärdena, `panel.grid.minor` för stödlinjer emellan skalvärdena) och tar bort stödlinjerna från x-axeln.
+
+```{r}
+
+p <- p + theme(panel.grid.major.x = element_blank(),
+               panel.grid.minor.x = element_blank(),
+               panel.grid.major.y = element_line(color = "gray70"),
+               panel.grid.minor.y = element_line(color = "gray80"))
+
+p
+
+```
+
+##### Text {-}
+Det som saknas just nu i diagrammet är tydligare (och större) text som förklarar de olika delarna av diagrammet för läsaren. De olika etiketterna kan alla anges i samma funktion genom olika argument likt:
+
+```{r}
+
+p <- p + labs(x = "Bilmärke", y = "Andel", caption = "Källa: Hietala (2019)")
+
+p
+
+```
+
+Det vi kan förhålla oss till när vi anger titeln för y-axeln är att den beskriver enheten som används för att mäta axelns skalvärden. Då vi i detta fall har värden mellan $0$ och $1$ bör vi ange *Andel* som titel. Om vi skulle haft absoulta frekvenser skulle en lämplig titel varit *Antal*. Om vi istället för andelar anger skalan i procent likt tidigare diagram kan det diskuteras huruvida det behövs en y-axeltitel eftersom enheten redan är angiven på skalan. Diagrammet skulle då kunna se ut som:
+
+```{r}
+
+p + scale_y_continuous(labels = scales::percent) + labs(y = "")
+
+```
+
+Vi kan 
+
+#### SAS EG
+
+
+#### SPSS
+
+
+# Referenser

@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1560281987763.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1765842672",
+    "id" : "4526AEA8",
+    "lastKnownWriteTime" : 1560267407,
+    "last_content_update" : 1560267407,
+    "path" : "F:/GitHubs/visualization_literature/hietala_theme.R",
+    "project_path" : "hietala_theme.R",
+    "properties" : {
+        "cursorPosition" : "7,60",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
