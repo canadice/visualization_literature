@@ -1,0 +1,63 @@
+###### Datorövning 2 Visuell dataanalys 732G31 2015-07-13
+
+## Anger en arbetsmapp på datorn, den sökväg där vi har alla filer som vi kommer vilja arbeta med
+dir <- "C:/Users/isahi12/OneDrive - Linköpings universitet/Jobb/LiU/Kurser/2. Visualisering/732G31 - Visuell Dataanalys/2017/Moment 2/D2"
+
+setwd(dir)
+
+## Laddar paketen med de funktioner som vi vill använda
+require(ggplot2)
+require(RColorBrewer)
+
+### Uppgift 2
+## Siffror anges bara som de är
+valfritt_nummer <- 3
+## För att man ska ange text måste de omfattas av " " för att R ska läsa de som text
+valfri_text <- "Hello world!"
+
+## En vektor med värden
+A <- c(3, 5, 3, 7)
+A
+B <- c(1, 3, 2, 4)
+B
+
+matrix(A, nrow = 2)
+
+C <- A + B
+C
+D <- A * B
+D
+
+Procent <- D / sum(D) * 100
+Procent
+
+## En vektor med textstränger
+ord <- c("Apelsin", "Banan", "Citron")
+ord
+
+### Kort om funktioner
+
+## En funktion är strukturerad på följande sätt
+##
+## funktionens namn(argument som styr vad funktionen gör, separerade med kommatecken)
+##
+## argumentens värden anges med = till skillnad från "vanlig" kodning
+##
+## En funktion börjar med en ( och slutar men en ). 
+## Detta betyder att man kan skriva en funktion på både en eller flera rader.
+## Notera att R dock måste ha någon form utav indikation att funktionen fortsätter,
+## t.ex. ett , för att ange att flera argument tillkommer eller ett + för att 
+## koppla ihop flera funktioner, likt ggplot2-paketet.
+
+### Uppgift 3
+## Laddar in datamaterial
+read.csv2("D1bil.csv", dec = ".")
+bil <- read.csv2("D1bil.csv", dec = ".")
+elev <- read.csv2("D1elev.csv", dec = ".")
+
+## FORTSÄTT MED KODMANUALEN
+
+
+
+
+

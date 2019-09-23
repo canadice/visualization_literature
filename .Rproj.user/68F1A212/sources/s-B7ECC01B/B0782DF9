@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1568717371570.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "137|27|144|0|\n145|11|152|0|\n155|24|166|0|\n167|18|238|0|\n241|28|491|0|\n",
+    "hash" : "970184320",
+    "id" : "B0782DF9",
+    "lastKnownWriteTime" : 1569225866,
+    "last_content_update" : 1569225866983,
+    "path" : "F:/GitHubs/visualization_literature/732G45_Visualisering_Material.Rmd",
+    "project_path" : "732G45_Visualisering_Material.Rmd",
+    "properties" : {
+        "cursorPosition" : "3,30",
+        "last_setup_crc32" : "",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

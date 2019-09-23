@@ -5,8 +5,8 @@ account: canadice
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 976644
-bundleId: 2146291
+bundleId: 2420028
 url: https://canadice.shinyapps.io/book_test/
-when: 1560280098.63777
+when: 1568716564.16427
 asMultiple: FALSE
 asStatic: FALSE

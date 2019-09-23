@@ -5,20 +5,20 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1765842672",
+    "hash" : "0",
     "id" : "4526AEA8",
-    "lastKnownWriteTime" : 1560267407,
-    "last_content_update" : 1560267407,
+    "lastKnownWriteTime" : 1569223769,
+    "last_content_update" : 1569223769110,
     "path" : "F:/GitHubs/visualization_literature/hietala_theme.R",
     "project_path" : "hietala_theme.R",
     "properties" : {
-        "cursorPosition" : "7,60",
+        "cursorPosition" : "4,47",
         "scrollLine" : "0"
     },
     "read_only" : false,
     "read_only_alternatives" : [
     ],
-    "relative_order" : 3,
+    "relative_order" : 2,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "r_source"
