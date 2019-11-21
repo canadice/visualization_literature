@@ -1,8 +1,0 @@
-"0",""
-"0","p <- p + theme(panel.grid.major.x = element_blank(),"
-"0","               panel.grid.minor.x = element_blank(),"
-"0","               panel.grid.major.y = element_line(color = ""gray70""),"
-"0","               panel.grid.minor.y = element_line(color = ""gray80""))"
-"0",""
-"0","p"
-"0",""

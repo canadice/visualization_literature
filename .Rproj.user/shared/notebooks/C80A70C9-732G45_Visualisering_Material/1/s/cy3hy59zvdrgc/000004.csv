@@ -1,6 +1,0 @@
-"0",""
-"0","p <- p + scale_y_continuous(breaks = seq(from = 0, to = 1, by = .10), "
-"0","                            limits = c(0, 0.25),"
-"0","                            expand = c(0,0))"
-"0","p"
-"0",""

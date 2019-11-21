@@ -1,6 +1,0 @@
-"0",""
-"0","ggplot(exempeldata) + aes(x = civilstand, fill = bil) + "
-"0","  geom_bar(aes(y = stat(count/sum(count))), "
-"0","           position = ""dodge"") + "
-"0","  theme_bw()"
-"0",""

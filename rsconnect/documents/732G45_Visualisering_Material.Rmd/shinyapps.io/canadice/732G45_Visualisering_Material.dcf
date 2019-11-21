@@ -1,12 +1,10 @@
-name: 732G45_Visualisering_Material
-title: 732G45_Visualisering_Material
+name: 732G45_visualisering_material
+title: Material used for the course visualization part of 732G45
 username:
 account: canadice
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 1204313
-bundleId: 2550899
+bundleId: 2606916
 url: https://canadice.shinyapps.io/732G45_visualisering_material/
-when: 1572432689.95141
-asMultiple: FALSE
-asStatic: FALSE
+when: 1574340504.52238

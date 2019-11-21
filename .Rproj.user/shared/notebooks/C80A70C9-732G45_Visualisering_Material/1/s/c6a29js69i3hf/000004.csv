@@ -1,7 +1,0 @@
-"0",""
-"0","p <- ggplot(exempeldata) + aes(x = factor(0), y = alder) +"
-"0","  geom_boxplot(fill = ""orange"") +"
-"0","  scale_x_discrete(breaks = NULL)"
-"0",""
-"0","p"
-"0",""

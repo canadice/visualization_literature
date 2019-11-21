@@ -1,3 +1,0 @@
-"0",""
-"0","ggplot(exempeltabell) + aes(x = Märke, y = Frekvens) + geom_bar(stat = ""identity"") + theme_bw()"
-"0",""
