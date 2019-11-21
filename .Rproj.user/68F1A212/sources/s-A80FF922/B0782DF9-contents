@@ -1084,11 +1084,13 @@ ggpairs(data = iris,
 
 
 ### Tree maps
+För att skapa en tree map behöver vi först ladda paketet `portfolio` samt hämta hem den förändrade 
+
 ```{r}
 
 require(portfolio)
 
-source("https://liuonline-my.sharepoint.com/:u:/g/personal/isahi12_liu_se/EbwGswDRTt1Ekr9ULqCj6YoBIB4qAxSH77xnPM1xE2nGrw?e=zZrSQM")
+source("https://raw.githubusercontent.com/canadice/visualization_literature/master/treemapbrewer.r")
 
 ```
 
