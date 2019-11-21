@@ -1,0 +1,3 @@
+"0",""
+"0","ggplot(exempeldata) + aes(x = bil) + geom_bar()"
+"0",""

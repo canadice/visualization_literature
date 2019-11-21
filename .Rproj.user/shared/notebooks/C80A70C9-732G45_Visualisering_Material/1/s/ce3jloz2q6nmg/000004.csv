@@ -1,0 +1,7 @@
+"0",""
+"0","p <- p + geom_histogram(fill = ""orange"", "
+"0","                        color = ""black"","
+"0","                        bins = 10)"
+"0",""
+"0","p"
+"0",""

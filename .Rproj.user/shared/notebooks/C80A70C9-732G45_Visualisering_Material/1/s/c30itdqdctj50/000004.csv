@@ -1,0 +1,3 @@
+"0",""
+"0","ggplot(exempeldata) + aes(x = bil) + geom_bar(aes(y = stat(count/sum(count)))) + theme_bw()"
+"0",""

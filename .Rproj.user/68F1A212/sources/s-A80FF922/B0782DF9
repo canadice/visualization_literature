@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1568717371570.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "48|14|57|0|\n61|20|144|0|\n145|27|152|0|\n153|11|160|0|\n163|24|174|0|\n175|18|246|0|\n247|41|716|0|\n725|31|848|0|\n849|26|1000|0|\n1001|33|1084|0|\n",
+    "hash" : "0",
+    "id" : "B0782DF9",
+    "lastKnownWriteTime" : 1574337849,
+    "last_content_update" : 1574337884918,
+    "path" : "F:/GitHubs/visualization_literature/732G45_Visualisering_Material.Rmd",
+    "project_path" : "732G45_Visualisering_Material.Rmd",
+    "properties" : {
+        "cursorPosition" : "1090,130",
+        "last_setup_crc32" : "",
+        "scrollLine" : "175"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

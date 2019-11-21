@@ -1,0 +1,7 @@
+"0",""
+"0","p <- ggplot(exempeldata) + "
+"0","  aes(x = civilstand, fill = bil) + "
+"0","  geom_bar(position = ""dodge"") + "
+"0","  theme_bw()"
+"0",""
+"0","p "

@@ -5,8 +5,8 @@ account: canadice
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 1204313
-bundleId: 2436390
+bundleId: 2550899
 url: https://canadice.shinyapps.io/732G45_visualisering_material/
-when: 1569225520.38607
+when: 1572432689.95141
 asMultiple: FALSE
 asStatic: FALSE

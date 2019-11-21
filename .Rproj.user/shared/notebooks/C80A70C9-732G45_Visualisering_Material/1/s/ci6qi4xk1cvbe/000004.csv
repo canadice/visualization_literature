@@ -1,0 +1,7 @@
+"0",""
+"0","p <- p + scale_fill_manual(name = ""Bilmärke"","
+"0","                           values = brewer.pal(n = 8,"
+"0","                                               name = ""Oranges""))"
+"0",""
+"0","p"
+"0",""

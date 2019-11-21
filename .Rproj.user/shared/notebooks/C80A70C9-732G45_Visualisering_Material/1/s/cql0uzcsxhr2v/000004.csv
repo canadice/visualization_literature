@@ -1,0 +1,6 @@
+"0",""
+"0","exempeltabell <- as.data.frame(table(exempeldata$bil))"
+"0","colnames(exempeltabell) <- c(""Märke"", ""Frekvens"")"
+"0",""
+"0","kable(exempeltabell, format = ""html"", caption = ""Fördelning av bilmärken i urvalet"") %>%"
+"0","  kable_styling(position = ""center"", full_width = FALSE)"

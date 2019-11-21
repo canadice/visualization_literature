@@ -1,0 +1,4 @@
+"0",""
+"0","ggplot(iris) + aes(x = Species) + geom_bar(width = 0.6) +"
+"0","  labs(y = ""Antal"", x = ""Art"", caption = ""Källa: Fisher, R. A. (1936)"")"
+"0",""

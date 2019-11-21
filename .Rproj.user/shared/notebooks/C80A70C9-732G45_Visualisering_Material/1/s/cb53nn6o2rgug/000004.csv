@@ -1,0 +1,4 @@
+"0",""
+"0","exempeldata <- read.csv2(file = ""732G45_exempeldata.csv"")"
+"0",""
+"0","head(exempeldata, n = 5)"
